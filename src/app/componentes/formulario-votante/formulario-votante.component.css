@@ -1,0 +1,27 @@
+/*[(ngModel)]="dataSourceListBarrios"*/
+.clase-form{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  text-align: -webkit-center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.form-label{
+  color: #2d2c2c;
+}
+
+.clase_select{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+@media screen and (max-width: 575px) {
+  .clase-form{
+    width: 75%;
+    margin-top: 10%;
+  }
+
+}

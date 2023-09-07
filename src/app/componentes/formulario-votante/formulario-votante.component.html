@@ -1,0 +1,78 @@
+<form [formGroup]="insertarForm" (ngSubmit)="insertarVotante(insertarForm.value);" class="row g-3 clase-form">
+
+  <div class="col-xs-12 col-md-12">
+      <h2>
+        Para apoyarnos y ser contactado, favor llene el siguiente formulario.
+      </h2>
+  </div>
+
+  <div class="col-xs-6 col-md-6">
+    <label class="form-label">
+      Nombre completo <span style="color: red;" *ngIf="this.insertarForm.get('NombreCompleto')?.errors?.['required']">(*)</span>
+    </label>
+    <input type="text" formControlName="NombreCompleto" class="form-control" placeholder="Ingrese su nombre" required>
+
+  </div>
+
+  <div class="col-xs-6 col-md-6">
+    <label class="form-label">
+      Cédula <span style="color: red;" *ngIf="this.insertarForm.get('Cedula')?.errors?.['required']">(*)</span>
+    </label>
+    <input type="number" formControlName="Cedula" class="form-control" placeholder="Ingrese su cédula" required>
+  </div>
+
+  <div class="col-xs-6 col-md-6">
+    <label class="form-label">
+      Teléfono <span style="color: red;" *ngIf="this.insertarForm.get('Celular')?.errors?.['required']">(*)</span>
+    </label>
+    <input type="number" formControlName="Celular" class="form-control" placeholder="Ingrese su teléfono" required>
+  </div>
+
+  <div class="col-xs-6 col-md-6">
+    <label class="form-label">
+    Dirección <span style="color: red;" *ngIf="this.insertarForm.get('Direccion')?.errors?.['required']">(*)</span>
+    </label>
+    <input type="text" formControlName="Direccion" class="form-control" placeholder="Ingrese su dirección" required>
+  </div>
+
+  <div class="col-xs-12 col-md-12">
+    <label class="form-label">
+    Barrio
+    </label>
+    <select type="number" id="SelectBarrios" formControlName="IdBarrio" class="form-control form-select form-select-md mb-3" name="SelectBarrios" aria-label=".form-select-md example">
+      <option value ="0"selected class="clase_select" >Seleccione un barrio</option>
+      <option [value]="item.id" *ngFor="let item of ListaBarrios" class="clase_select">{{item.nombre}}</option>
+    </select>
+  </div>
+
+  <button type="submit" class="col-xs-8 col-md-8 btn btn-success">
+    Enviar
+  </button>
+
+
+  <div style="display: none;">
+    <input formControlName="Nombre1" value=null>
+    <input formControlName="Nombre2" value=null>
+    <input formControlName="Apellido1" value=null>
+    <input formControlName="Apellido2" value=null>
+    <input formControlName="IdSexo" value=null>
+    <input formControlName="Edad" value=null>
+    <input formControlName="CantAfichesCasa" value=null>
+    <input formControlName="CantAfichesCarro" value=null>
+    <input formControlName="CantAfichesMoto" value=null>
+    <input formControlName="IdUsuarioCreacion" value=null>
+  </div>
+
+  <div *ngIf="codeEstatus == 2">
+      <p style="color: red;">Error al enviar el registro!!!</p>
+  </div>
+
+  <div *ngIf="codeEstatus == 1" >
+      <p style="color: green;">Registro exitoso!!!</p>
+  </div>
+
+  <div *ngIf="codeEstatus == 0 ">
+      <p style="color: red;">No puede haber campos vacíos!!!</p>
+  </div>
+
+</form>

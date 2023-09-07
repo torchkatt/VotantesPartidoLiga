@@ -1,0 +1,122 @@
+<form class="main row g-0">
+
+  <div class="col-xs-12 col-md-12 clase-form">
+
+    <div class="row fila-todos">
+
+      <div class="row fila-datos-personales">
+
+        <div class="col-xs-6 col-md-6">
+          <label class="form-label">
+            Primer Nombre
+          </label>
+          <input type="text" [formControl]="PrimerNombre" class="form-control" placeholder="Ingrese su primer nombre">
+        </div>
+
+        <div class="col-xs-6 col-md-6">
+          <label class="form-label">
+            Segundo Nombre
+          </label>
+          <input type="text" [formControl]="SegundoNombre" class="form-control" placeholder="Ingrese su segundo nombre">
+        </div>
+
+        <div class="col-xs-6 col-md-6">
+          <label class="form-label">
+            Primer Apellido
+          </label>
+          <input type="text" [formControl]="PrimerApellido" class="form-control" placeholder="Ingrese su primer apellido">
+        </div>
+
+        <div class="col-xs-6 col-md-6">
+          <label class="form-label">
+            Segundo Nombre
+          </label>
+          <input type="text" [formControl]="SegundoApellido" class="form-control" placeholder="Ingrese su segundo apellido">
+        </div>
+
+        <div class="col-xs-6 col-md-6">
+          <label class="form-label">
+          Sexo
+          </label>
+          <select id="SelectBarrios" class="form-control form-select form-select-md mb-3" name="SelectBarrios" aria-label=".form-select-md example">
+            <option value ="0"selected class="clase_select" >Seleccione un barrio</option>
+            <option [value]="item.id" *ngFor="let item of ListaBarrios" class="clase_select">{{item.nombre}}</option>
+          </select>
+        </div>
+
+        <div class="col-xs-6 col-md-6">
+          <label class="form-label">
+            Edad
+          </label>
+          <input type="number" [formControl]="cedula" class="form-control" placeholder="Ingrese su cédula">
+        </div>
+
+        <div class="col-xs-6 col-md-6">
+          <label class="form-label">
+            Cédula
+          </label>
+          <input type="number" [formControl]="cedula" class="form-control" placeholder="Ingrese su cédula">
+        </div>
+
+        <div class="col-xs-6 col-md-6">
+          <label class="form-label">
+            Teléfono
+          </label>
+          <input type="number" [formControl]="telefono" class="form-control" placeholder="Ingrese su teléfono">
+        </div>
+
+        <div class="col-xs-12 col-md-12">
+          <label class="form-label">
+          Dirección
+          </label>
+          <input type="text" [formControl]="direccion" class="form-control" placeholder="Ingrese su dirección">
+        </div>
+
+        <div class="col-xs-12 col-md-12">
+          <label class="form-label">
+          Barrio
+          </label>
+          <select id="SelectBarrios" class="form-control form-select form-select-md mb-3" name="SelectBarrios" aria-label=".form-select-md example">
+            <option value ="0"selected class="clase_select" >Seleccione un barrio</option>
+            <option [value]="item.id" *ngFor="let item of ListaBarrios" class="clase_select">{{item.nombre}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row fila-afiches">
+
+          <div class="col-xs-2 col-md-2">
+            <label class="form-label">
+              Afiches casa
+            </label>
+            <input type="number" [formControl]="afichesCasa" class="form-control">
+          </div>
+
+          <div class="col-xs-2 col-md-2">
+            <label class="form-label">
+              Afiches carro
+            </label>
+            <input type="number" [formControl]="afichesCarro" class="form-control">
+          </div>
+
+          <div class="col-xs-2 col-md-2">
+            <label class="form-label">
+              Afiches moto
+            </label>
+            <input type="number" [formControl]="afichesMoto" class="form-control">
+          </div>
+      </div>
+
+      <div class="row fila-footer">
+        <div class="col-xs-6 col-md-6">
+          <button class="btn btn-primary">
+            Crear
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

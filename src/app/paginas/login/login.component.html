@@ -1,0 +1,33 @@
+<div class="wrapper fadeInDown text-center">
+  <div id="formContent" class="content login">
+
+    
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)" class="form-signin shadow-lg p-3 mb-5 bg-body rounded">
+    <div class="fadeIn first">
+      <img class="logo_login" src="./../assets/logo_liga_rosado.png" alt width="72" height="57">
+    </div>
+
+      <input type="text" id="login" class=" second input-form" placeholder="usuario" formControlName="usuario" >
+      <input type="password" id="password" class="fadeIn third input-form" placeholder="password" formControlName="password">
+      <input type="submit" class="fadeIn fourth form-control" value="Iniciar" >
+
+    <div class="alert alert-danger" *ngIf="errorStatus" >
+      <p>{{errorMsj}}</p>
+    </div>
+
+<div  *ngIf="codeEstatus != 0 && codeEstatus != null ">
+    <div class="alert alert-danger">
+      <p>{{errorMsj}}</p>
+    </div>
+  </div>
+  <div  *ngIf="codeEstatus == 0" >
+    <div class="alert alert-succes">
+      <p>Registro exitoso!!!</p>
+    </div>
+  </div>
+
+
+    </form>
+
+  </div>
+</div>

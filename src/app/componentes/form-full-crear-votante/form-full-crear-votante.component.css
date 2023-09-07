@@ -1,0 +1,64 @@
+/*[(ngModel)]="dataSourceListBarrios"*/
+.main{
+  padding-top: 8%;
+}
+
+.clase-form{
+  margin: auto;
+  width: 90%;
+}
+
+.fila-todos{
+  display: flex;
+  justify-content: center;
+  text-align: -webkit-center;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 90%;
+  background-color: white;
+}
+
+.fila-datos-personales{
+  padding: 5px;
+}
+
+.fila-afiches{
+  align-items: center;
+  text-align: center;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 10px;
+}
+.fila-footer{
+  justify-content: center;
+  padding: 10px;
+}
+.fila-footer .btn{
+  width: 100%;
+}
+
+.form-label{
+  color: #2d2c2c;
+}
+
+.clase_select{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@media screen and (max-width: 575px) {
+
+
+  .fila-afiches{
+    align-items: center;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 10px;
+  }
+
+}

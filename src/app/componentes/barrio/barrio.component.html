@@ -1,0 +1,48 @@
+<div style="width:70%; margin:40px auto;">
+
+  <h2>Lista de Barrios</h2>
+
+  <mat-form-field style="width: 50%; border-radius: 10px;">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. El Poblado" #input>
+  </mat-form-field>
+
+  <div class="mat-elevation-z8" style=" border-radius: 10px;">
+    <table mat-table [dataSource]="dataSourceBarrios">
+
+      <!-- Nombre Column -->
+      <ng-container matColumnDef="nombre" style="width: 50%;">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      <!-- Activo Column -->
+      <ng-container matColumnDef="activo" style="width: 25%;">
+        <th mat-header-cell *matHeaderCellDef> Activo </th>
+        <td mat-cell *matCellDef="let element">{{element.activo==true}}</td>
+      </ng-container>
+
+      <!-- Acciones Column -->
+      <ng-container matColumnDef="Acciones" >
+        <th mat-header-cell *matHeaderCellDef style="width: 25%;"> </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button>
+            <mat-icon style="color:blue;">edit</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon style="color:red;">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                  showFirstLastButtons
+                  aria-label="Select page of barrios">
+    </mat-paginator>
+  </div>
+
+</div>

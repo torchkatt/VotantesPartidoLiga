@@ -1,0 +1,5 @@
+{
+  "usuariosUrl": "/v1/Usuarios/",
+    "votantesUrl": "/v1/VotantePriv/",
+    "barriosUrl": "/v1/Barrio/"
+}
